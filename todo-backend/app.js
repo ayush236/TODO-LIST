@@ -13,10 +13,12 @@ const rootDir = require('./utils/path');
 
 const app = express();
 
-app.use(express.static(Path.join(rootDir,"public")));
-app.use(express.urlencoded());
-app.use(cors);
-app.use(express.json)
+app.use(express.static(Path.join(rootDir, "public")));
+
+app.use(express.urlencoded({ extended: true }));  
+app.use(express.json());                          
+app.use(cors());                                  
+
 
 app.use('/todo/items', todolist)
 

@@ -4,15 +4,17 @@ import TodoItems from "./components/TodoItems";
 import WelcomeMessage from "./components/WelcomeMessage";
 import "./App.css";
 import { useState } from "react";
+import { Addtoserver } from "./services/todoserver";
 
 function App() {
   const [todoItems, setTodoItems] = useState([]);
 
-  const handleNewItem = (itemName, itemDueDate) => {
+  const handleNewItem = async (itemName, itemDueDate) => {
     console.log(`New Item Added: ${itemName} Date:${itemDueDate}`);
+    const serveritems= await Addtoserver(itemName,itemDueDate)
     const newTodoItems = [
       ...todoItems,
-      { name: itemName, dueDate: itemDueDate },
+      serveritems
     ];
     setTodoItems(newTodoItems);
   };

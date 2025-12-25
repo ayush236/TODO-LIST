@@ -13,7 +13,7 @@ const TodolistSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    CreatedAt:{
+    Timestamp:{
         type: Date,
         default: Date.now
     }
