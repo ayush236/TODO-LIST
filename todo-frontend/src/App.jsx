@@ -11,10 +11,10 @@ function App() {
 
   const handleNewItem = async (itemName, itemDueDate) => {
     console.log(`New Item Added: ${itemName} Date:${itemDueDate}`);
-    const serveritems= await Addtoserver(itemName,itemDueDate)
+    const items= await Addtoserver(itemName,itemDueDate)
     const newTodoItems = [
       ...todoItems,
-      serveritems
+      items
     ];
     setTodoItems(newTodoItems);
   };

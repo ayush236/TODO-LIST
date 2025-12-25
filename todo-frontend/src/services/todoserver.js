@@ -6,5 +6,16 @@ export const Addtoserver = async (task, date)=>{
         },
         body: JSON.stringify({task, date})
     })
-    return Response.json()
+    const item = await Response.json()
+    return mapServerItemToLocalItem(item)
+}
+
+const mapServerItemToLocalItem =(serveritems) =>{
+    return{
+        id: serveritems._id,
+        name: serveritems.task,
+        dueDate: serveritems.date,
+        completed: serveritems.complete,
+        createdAt: serveritems.Timestamp
+    };
 }
