@@ -21,7 +21,7 @@ function AddTodo({ onNewItem }) {
           placeholder="Enter Todo Here"
           value={todoName}
           onChange={(e) => setTodoName(e.target.value)}
-          className="flex-grow px-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-400"
+          className="grow px-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-purple-400"
         />
 
         <input
